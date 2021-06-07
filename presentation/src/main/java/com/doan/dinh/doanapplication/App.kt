@@ -9,6 +9,8 @@ import com.doan.dinh.doanapplication.di.core.module.DataModule
 import com.doan.dinh.doanapplication.di.core.module.NetworkModule
 import com.doan.dinh.doanapplication.di.search.SearchModule
 import com.doan.dinh.doanapplication.di.search.SearchSubComponent
+import com.doan.dinh.doanapplication.di.userdetail.DetailsModule
+import com.doan.dinh.doanapplication.di.userdetail.DetailsSubComponent
 
 class App : Application(), DaggerInjector {
 
@@ -26,5 +28,9 @@ class App : Application(), DaggerInjector {
 
     override fun createSearchComponent(): SearchSubComponent {
         return coreComponent.plus(SearchModule())
+    }
+
+    override fun createDetailsComponent(): DetailsSubComponent {
+        return coreComponent.plus(DetailsModule())
     }
 }

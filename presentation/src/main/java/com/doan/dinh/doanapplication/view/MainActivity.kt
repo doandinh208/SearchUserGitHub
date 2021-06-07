@@ -75,7 +75,7 @@ class MainActivity : BaseActivity<SearchViewModel>() {
         }
 
         viewModel.getNavigateToDetails().observe { item ->
-            Toast.makeText(this, "NAVIGATE TO ${item.login}", Toast.LENGTH_LONG).show()
+            UserDetailsActivity.start(this, item.login)
         }
 
         viewModel.getShowErrorLiveData().observe { error ->

@@ -5,6 +5,7 @@ import com.doan.dinh.data.repository.UserDataSource
 import com.doan.dinh.data.repository.UserRemoteDataSource
 import com.doan.dinh.data.repository.UserRepositoryImpl
 import com.doan.dinh.domain.repository.UserRepository
+import com.doan.dinh.domain.usecase.GetDetailUseCase
 import com.doan.dinh.domain.usecase.GetSearchUseCase
 import dagger.Module
 import dagger.Provides
@@ -29,6 +30,11 @@ class DataModule {
     @Provides
     fun provideGetSearchUseCase(repository: UserRepository): GetSearchUseCase {
         return GetSearchUseCase(repository)
+    }
+
+    @Provides
+    fun provideGetDetailUseCase(repository: UserRepository): GetDetailUseCase {
+        return GetDetailUseCase(repository)
     }
 
 }
