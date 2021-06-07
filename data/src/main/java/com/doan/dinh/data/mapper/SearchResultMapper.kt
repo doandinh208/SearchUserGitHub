@@ -1,10 +1,10 @@
 package com.doan.dinh.data.mapper
 
-import com.doan.dinh.data.model.ResultEntity
+import com.doan.dinh.data.model.SearchEntity
 import com.doan.dinh.domain.model.SearchModel
 
 object SearchResultMapper {
-    fun toDomain(dataRemote: ResultEntity): SearchModel {
+    fun toDomain(dataRemote: SearchEntity): SearchModel {
         return SearchModel(
             totalCount = dataRemote.totalCount,
             isIncompleteResults = dataRemote.isIncompleteResults,

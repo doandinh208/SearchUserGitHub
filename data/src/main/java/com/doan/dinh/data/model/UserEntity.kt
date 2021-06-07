@@ -1,12 +1,11 @@
 package com.doan.dinh.data.model
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class UserEntity(
     var login: String,
     var id: Long?,
-    @SerializedName("note_id")
+    @SerializedName("node_id")
     var nodeId: String?,
     @SerializedName("avatar_url")
     var avatarUrl: String,
@@ -19,7 +18,7 @@ data class UserEntity(
     var followersUrl: String?,
     @SerializedName("following_url")
     var followingUrl: String?,
-    @SerializedName("gits_url")
+    @SerializedName("gists_url")
     var gistsUrl: String?,
     @SerializedName("starred_url")
     var starredUrl: String?,
@@ -36,8 +35,4 @@ data class UserEntity(
     var bio: String?,
     var followers: Int?,
     var following: Int?,
-    @SerializedName("created_at")
-    var createdAt: Date?,
-    @SerializedName("updated_at")
-    var updatedAt: Date?
 )

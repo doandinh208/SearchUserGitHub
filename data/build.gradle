@@ -54,4 +54,6 @@ dependencies {
     //Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    testImplementation 'org.mockito:mockito-core:2.28.2'
+    testImplementation "org.mockito:mockito-inline:2.28.2"
 }
