@@ -1,24 +1,18 @@
 
 package com.doan.dinh.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class ResultEntity (
+    @SerializedName("total_count")
     var totalCount: Long,
+    @SerializedName("incomplete_results")
     var isIncompleteResults: Boolean,
-    var itemEntities: List<ItemEntity>
+    var items: List<ItemEntity>
 ) {
     data class ItemEntity(
-        var login: String,
-        var id: Long?,
-        var nodeId: String?,
+        var login: String?,
+        @SerializedName("avatar_url")
         var avatarUrl: String?,
-        var gravatarId: String?,
-        var url: String?,
-        var htmlUrl: String?,
-        var followersUrl: String?,
-        var followingUrl: String?,
-        var gistsUrl: String?,
-        var starredUrl: String?,
-        var subscriptionsUrl: String?,
-        var organizationsUrl: String?
     )
 }

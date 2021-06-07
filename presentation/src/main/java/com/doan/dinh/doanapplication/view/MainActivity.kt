@@ -2,7 +2,10 @@
 package com.doan.dinh.doanapplication.view
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.doan.dinh.doanapplication.adapter.ResultAdapter
 import com.doan.dinh.doanapplication.base.BaseActivity
 import com.doan.dinh.doanapplication.databinding.ActivityMainBinding
 import com.doan.dinh.doanapplication.viewmodel.SearchViewModel
@@ -13,9 +16,8 @@ class MainActivity : BaseActivity<SearchViewModel>() {
 
     @Inject
     lateinit var factory: SearchViewModelFactory
-
-
     private lateinit var binding: ActivityMainBinding
+    private var searchAdapter = ResultAdapter()
 
 
     override fun createViewModel(): SearchViewModel {
@@ -32,6 +34,52 @@ class MainActivity : BaseActivity<SearchViewModel>() {
         val view = binding.root
         setContentView(view)
 
+        init()
+        observeViewModel()
+        setupViewListeners()
+
+    }
+
+    private fun init() {
+        binding.recyclerView.adapter = searchAdapter
+    }
+
+    private fun setupViewListeners() {
+        binding.btnSearch.setOnClickListener {
+            if(binding.progressBar.visibility == View.GONE) {
+                val key = binding.edtSearch.text.toString()
+                if(key.isNotEmpty()) {
+                    viewModel.doSearch(key)
+                }
+            }
+
+        }
+
+        searchAdapter.setItemClick { item ->
+            viewModel.onUserItemClick(item)
+        }
+    }
+
+    private fun observeViewModel() {
+        viewModel.getHideLoadingLiveData().observe {
+            binding.progressBar.visibility = View.GONE
+        }
+
+        viewModel.getShowLoadingLiveData().observe {
+            binding.progressBar.visibility = View.VISIBLE
+        }
+
+        viewModel.onSearch().observe { data ->
+            searchAdapter.setItems(data.items)
+        }
+
+        viewModel.getNavigateToDetails().observe { item ->
+            Toast.makeText(this, "NAVIGATE TO ${item.login}", Toast.LENGTH_LONG).show()
+        }
+
+        viewModel.getShowErrorLiveData().observe { error ->
+            Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+        }
     }
 
 }

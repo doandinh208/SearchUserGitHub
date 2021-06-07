@@ -10,9 +10,9 @@ import retrofit2.http.Query
 interface GithubService {
 
     @GET("search/users")
-    fun searchUser(@Query("q") query: String): Deferred<ResultEntity>
+    fun searchUserAsync(@Query("q") query: String): Deferred<ResultEntity>
 
     @GET("users/{username}")
-    fun getUser(@Path("username") username: String): Deferred<UserEntity>
+    fun getUserAsync(@Path("username") username: String): Deferred<UserEntity>
 
 }

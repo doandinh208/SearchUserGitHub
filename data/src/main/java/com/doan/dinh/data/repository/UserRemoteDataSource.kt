@@ -12,7 +12,7 @@ class UserRemoteDataSource(private val serviceApi: GithubService) : UserDataSour
 
     override suspend fun searchUser(query: String): Result<SearchModel> {
         return try {
-            val result = serviceApi.searchUser(query).await()
+            val result = serviceApi.searchUserAsync(query).await()
             Result.Success(SearchResultMapper.toDomain(result))
         } catch (e: Exception) {
             Result.Error(e)
@@ -21,7 +21,7 @@ class UserRemoteDataSource(private val serviceApi: GithubService) : UserDataSour
 
     override suspend fun getUser(username: String): Result<UserModel> {
         return try {
-            val result = serviceApi.getUser(username).await()
+            val result = serviceApi.getUserAsync(username).await()
             Result.Success(UserMapper.toDomain(result))
         } catch (e: Exception) {
             Result.Error(e)

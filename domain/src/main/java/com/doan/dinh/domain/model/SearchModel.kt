@@ -8,8 +8,6 @@ data class SearchModel (
 ) {
     data class ItemModel(
             var avatarUrl: String?,
-        var login: String,
-        var id: Long?,
-        var url: String?
+        var login: String
     )
 }

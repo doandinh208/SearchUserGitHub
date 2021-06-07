@@ -8,11 +8,8 @@ object SearchResultMapper {
         return SearchModel(
                 totalCount = dataRemote.totalCount,
                 isIncompleteResults = dataRemote.isIncompleteResults,
-                items = dataRemote.itemEntities.map { e -> SearchModel.ItemModel(
-                        login  = e.login,
-                    id = e.id,
-
-                    url = e.url,
+                items = dataRemote.items.map { e -> SearchModel.ItemModel(
+                        login  = e.login ?: "Unknown" ,
                         avatarUrl = e.avatarUrl) }
         )
     }

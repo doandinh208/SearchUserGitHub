@@ -60,6 +60,8 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:2.23.1"
     implementation "com.google.dagger:dagger:2.23.1"
 
+    //LOG
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
 
     //Test
     testImplementation 'junit:junit:4.13.2'
