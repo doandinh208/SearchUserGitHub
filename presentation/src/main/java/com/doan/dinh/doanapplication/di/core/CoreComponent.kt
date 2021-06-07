@@ -11,11 +11,13 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [
-    AppModule::class,
-    NetworkModule::class,
-    DataModule::class
-])
+@Component(
+    modules = [
+        AppModule::class,
+        NetworkModule::class,
+        DataModule::class
+    ]
+)
 
 interface CoreComponent {
     fun plus(searchModule: SearchModule): SearchSubComponent

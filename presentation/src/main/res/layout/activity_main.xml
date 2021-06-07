@@ -25,20 +25,18 @@
 
             <ImageButton
                 android:id="@+id/btnSearch"
-                android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:src="@android:drawable/ic_menu_search"
-                />
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_menu_search" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
     </LinearLayout>
 
     <TextView
@@ -46,16 +44,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:visibility="gone"
-        android:textColor="@android:color/black"
         android:text="@string/no_results"
-        />
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        />
+        android:visibility="gone" />
 </FrameLayout>

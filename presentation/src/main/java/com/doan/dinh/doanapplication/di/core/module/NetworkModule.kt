@@ -22,10 +22,10 @@ class NetworkModule(private val baseUrl: String) {
         val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
         return Retrofit.Builder()
             .client(client)
-                .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(baseUrl)
-                .build()
+            .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(baseUrl)
+            .build()
     }
 
     @Singleton

@@ -1,4 +1,3 @@
-
 package com.doan.dinh.doanapplication.viewmodel
 
 import androidx.lifecycle.LiveData
@@ -21,7 +20,7 @@ class SearchViewModel(
     private val navigateToDetail: MutableLiveData<SearchModel.ItemModel> = MutableLiveData()
 
 
-    fun doSearch(key : String) {
+    fun doSearch(key: String) {
         showLoadingLiveData.postValue(Unit)
 
         execute {

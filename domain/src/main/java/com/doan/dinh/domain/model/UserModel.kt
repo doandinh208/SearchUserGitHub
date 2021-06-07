@@ -1,10 +1,7 @@
-
 package com.doan.dinh.domain.model
 
-import java.util.Date
-
-data class UserModel (
-        var avatarUrl: String?,
+data class UserModel(
+    var avatarUrl: String?,
     var nodeId: String?,
 
     var url: String?,

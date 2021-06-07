@@ -10,13 +10,15 @@ import com.doan.dinh.domain.usecase.GetSearchUseCase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
+
 @Module
 class DataModule {
 
     @Provides
     @Singleton
-    fun provideUserRepository(userRemote: UserDataSource
-                               ): UserRepository {
+    fun provideUserRepository(
+        userRemote: UserDataSource
+    ): UserRepository {
         return UserRepositoryImpl(userRemote)
     }
 

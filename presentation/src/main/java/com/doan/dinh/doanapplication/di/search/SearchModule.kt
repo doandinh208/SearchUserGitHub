@@ -10,7 +10,10 @@ import dagger.Provides
 class SearchModule {
 
     @Provides
-    fun provideSearchViewModelFactory(useCase: GetSearchUseCase, dispatchersProvider: DispatchersProvider): SearchViewModelFactory {
+    fun provideSearchViewModelFactory(
+        useCase: GetSearchUseCase,
+        dispatchersProvider: DispatchersProvider
+    ): SearchViewModelFactory {
         return SearchViewModelFactory(useCase, dispatchersProvider)
     }
 

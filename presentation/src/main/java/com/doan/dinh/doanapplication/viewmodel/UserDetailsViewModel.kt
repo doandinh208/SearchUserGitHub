@@ -1,7 +1,7 @@
-
 package com.doan.dinh.doanapplication.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.doan.dinh.doanapplication.base.BaseViewModel
 import com.doan.dinh.doanapplication.util.DispatchersProvider
 import com.doan.dinh.domain.model.UserModel
@@ -9,7 +9,7 @@ import com.doan.dinh.domain.usecase.GetDetailUseCase
 import com.doan.dinh.domain.util.Result
 
 class UserDetailsViewModel(
-    private  val getUserUseCase: GetDetailUseCase,
+    private val getUserUseCase: GetDetailUseCase,
     dispatchers: DispatchersProvider
 ) : BaseViewModel(dispatchers) {
     private val detailLiveData: MutableLiveData<UserModel> = MutableLiveData()
@@ -18,7 +18,7 @@ class UserDetailsViewModel(
     private val showErrorLiveData: MutableLiveData<String> = MutableLiveData()
 
 
-    fun getDetail(username : String) {
+    fun getDetail(username: String) {
         showLoadingLiveData.postValue(Unit)
 
         execute {

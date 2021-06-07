@@ -1,4 +1,3 @@
-
 package com.doan.dinh.doanapplication.view
 
 import android.os.Bundle
@@ -46,9 +45,9 @@ class MainActivity : BaseActivity<SearchViewModel>() {
 
     private fun setupViewListeners() {
         binding.btnSearch.setOnClickListener {
-            if(binding.progressBar.visibility == View.GONE) {
+            if (binding.progressBar.visibility == View.GONE) {
                 val key = binding.edtSearch.text.toString()
-                if(key.isNotEmpty()) {
+                if (key.isNotEmpty()) {
                     binding.tvNoresult.visibility = View.GONE
                     viewModel.doSearch(key)
                 }
@@ -73,9 +72,9 @@ class MainActivity : BaseActivity<SearchViewModel>() {
         viewModel.onSearch().observe { data ->
             searchAdapter.setItems(data.items)
             binding.progressBar.visibility = View.GONE
-            if(data.items.isEmpty()) {
+            if (data.items.isEmpty()) {
                 binding.tvNoresult.visibility = View.VISIBLE
-            }else{
+            } else {
                 binding.tvNoresult.visibility = View.GONE
             }
         }

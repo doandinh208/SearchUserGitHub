@@ -1,12 +1,11 @@
-
 package com.doan.dinh.doanapplication.view
 
 import android.content.Context
-import androidx.lifecycle.*
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.doan.dinh.doanapplication.base.BaseActivity
 import com.doan.dinh.doanapplication.databinding.ActivityUserDetailsBinding
@@ -59,7 +58,7 @@ class UserDetailsActivity : BaseActivity<UserDetailsViewModel>() {
 
     private fun observeViewModel() {
         viewModel.onGetDetail().observe { user ->
-            if(!user.avatarUrl.isNullOrEmpty()) {
+            if (!user.avatarUrl.isNullOrEmpty()) {
                 Glide.with(applicationContext).load(user.avatarUrl).into(binding.ivAvatarDetail)
             }
 

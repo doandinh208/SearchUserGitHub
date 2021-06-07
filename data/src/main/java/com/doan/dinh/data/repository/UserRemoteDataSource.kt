@@ -5,8 +5,8 @@ import com.doan.dinh.data.mapper.SearchResultMapper
 import com.doan.dinh.data.mapper.UserMapper
 import com.doan.dinh.domain.model.SearchModel
 import com.doan.dinh.domain.model.UserModel
-import java.lang.Exception
 import com.doan.dinh.domain.util.Result
+
 class UserRemoteDataSource(private val serviceApi: GithubService) : UserDataSource {
 
 

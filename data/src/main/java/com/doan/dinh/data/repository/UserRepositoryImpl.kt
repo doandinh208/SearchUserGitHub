@@ -6,7 +6,7 @@ import com.doan.dinh.domain.repository.UserRepository
 import com.doan.dinh.domain.util.Result
 
 class UserRepositoryImpl constructor(
-        private val userRemote: UserDataSource
+    private val userRemote: UserDataSource
 ) : UserRepository {
 
 

@@ -1,10 +1,9 @@
-
 package com.doan.dinh.data.model
 
 import com.google.gson.annotations.SerializedName
-import java.util.Date
+import java.util.*
 
-data class UserEntity (
+data class UserEntity(
     var login: String,
     var id: Long?,
     @SerializedName("note_id")
