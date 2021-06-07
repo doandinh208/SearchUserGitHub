@@ -22,7 +22,7 @@ class SearchViewModel(
 
 
     fun doSearch(key : String) {
-//        showLoadingLiveData.postValue(Unit)
+        showLoadingLiveData.postValue(Unit)
 
         execute {
             when (val result = searchUseCase.execute(key)) {

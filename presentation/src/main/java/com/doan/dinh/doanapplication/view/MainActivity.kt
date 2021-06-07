@@ -71,6 +71,7 @@ class MainActivity : BaseActivity<SearchViewModel>() {
 
         viewModel.onSearch().observe { data ->
             searchAdapter.setItems(data.items)
+            binding.progressBar.visibility = View.GONE
         }
 
         viewModel.getNavigateToDetails().observe { item ->
