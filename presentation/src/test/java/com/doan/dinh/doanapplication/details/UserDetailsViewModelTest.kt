@@ -18,9 +18,6 @@ import org.mockito.junit.MockitoJUnitRunner
 class UserDetailsViewModelTest : BaseViewModelTest() {
 
     @Mock
-    lateinit var userDetail: UserModel
-
-    @Mock
     lateinit var getDetailUseCase: GetDetailUseCase
 
     private lateinit var viewModel: UserDetailsViewModel
