@@ -3,11 +3,9 @@ package com.doan.dinh.doanapplication.base
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import com.doan.dinh.doanapplication.di.DaggerInjector
 
-abstract class BaseActivity<VM : BaseViewModel>(
-) : AppCompatActivity() {
+abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     protected val daggerInjector: DaggerInjector by lazy { application as DaggerInjector }
 
@@ -21,7 +19,7 @@ abstract class BaseActivity<VM : BaseViewModel>(
     }
 
     fun <T> LiveData<T>.observe(observer: (T) -> Unit) {
-        observe(this@BaseActivity, Observer {
+        observe(this@BaseActivity, {
             it?.let { observer(it) }
         })
     }

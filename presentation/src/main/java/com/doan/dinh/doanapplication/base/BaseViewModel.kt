@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel(
-    private val dispatchers: DispatchersProvider
+        private val dispatchers: DispatchersProvider
 ) : ViewModel(), CoroutineScope {
 
     override val coroutineContext: CoroutineContext

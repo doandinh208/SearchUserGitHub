@@ -9,8 +9,8 @@ import com.doan.dinh.domain.usecase.GetDetailUseCase
 import com.doan.dinh.domain.util.Result
 
 class UserDetailsViewModel(
-    private val getUserUseCase: GetDetailUseCase,
-    dispatchers: DispatchersProvider
+        private val getUserUseCase: GetDetailUseCase,
+        dispatchers: DispatchersProvider
 ) : BaseViewModel(dispatchers) {
     private val detailLiveData: MutableLiveData<UserModel> = MutableLiveData()
     private val showLoadingLiveData: MutableLiveData<Unit> = MutableLiveData()

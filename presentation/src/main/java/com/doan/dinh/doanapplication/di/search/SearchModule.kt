@@ -11,8 +11,8 @@ class SearchModule {
 
     @Provides
     fun provideSearchViewModelFactory(
-        useCase: GetSearchUseCase,
-        dispatchersProvider: DispatchersProvider
+            useCase: GetSearchUseCase,
+            dispatchersProvider: DispatchersProvider
     ): SearchViewModelFactory {
         return SearchViewModelFactory(useCase, dispatchersProvider)
     }

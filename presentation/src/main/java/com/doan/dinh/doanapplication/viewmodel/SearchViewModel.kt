@@ -9,8 +9,8 @@ import com.doan.dinh.domain.usecase.GetSearchUseCase
 import com.doan.dinh.domain.util.Result
 
 class SearchViewModel(
-    private val searchUseCase: GetSearchUseCase,
-    dispatchers: DispatchersProvider
+        private val searchUseCase: GetSearchUseCase,
+        dispatchers: DispatchersProvider
 ) : BaseViewModel(dispatchers) {
 
     private val searchLiveData: MutableLiveData<SearchModel> = MutableLiveData()

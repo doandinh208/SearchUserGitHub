@@ -21,11 +21,11 @@ class NetworkModule(private val baseUrl: String) {
         interceptor.level = (HttpLoggingInterceptor.Level.BODY)
         val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
         return Retrofit.Builder()
-            .client(client)
-            .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(baseUrl)
-            .build()
+                .client(client)
+                .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(baseUrl)
+                .build()
     }
 
     @Singleton

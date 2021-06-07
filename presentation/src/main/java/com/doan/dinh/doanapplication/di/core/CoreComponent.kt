@@ -12,11 +12,11 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [
-        AppModule::class,
-        NetworkModule::class,
-        DataModule::class
-    ]
+        modules = [
+            AppModule::class,
+            NetworkModule::class,
+            DataModule::class
+        ]
 )
 
 interface CoreComponent {

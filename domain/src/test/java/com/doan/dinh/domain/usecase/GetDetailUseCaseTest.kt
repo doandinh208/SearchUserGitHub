@@ -32,7 +32,7 @@ class GetDetailUseCaseTest {
     @Before
     fun setUp() {
         getDetailUseCase = GetDetailUseCase(
-            userRepository
+                userRepository
         )
     }
 

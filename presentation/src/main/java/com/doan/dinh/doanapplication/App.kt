@@ -19,10 +19,10 @@ class App : Application(), DaggerInjector {
     override fun onCreate() {
         super.onCreate()
         coreComponent = DaggerCoreComponent.builder()
-            .appModule(AppModule(applicationContext))
-            .networkModule(NetworkModule(BuildConfig.BASE_URL))
-            .dataModule(DataModule())
-            .build()
+                .appModule(AppModule(applicationContext))
+                .networkModule(NetworkModule(BuildConfig.BASE_URL))
+                .dataModule(DataModule())
+                .build()
     }
 
 

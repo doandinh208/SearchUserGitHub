@@ -33,8 +33,8 @@ class AppEntityJsonMapperTest {
         Assert.assertThat(resultModel.items.size, `is`(2))
         val itemOne = resultModel.items[0]
         Assert.assertThat(
-            itemOne.avatarUrl,
-            `is`("https://avatars.githubusercontent.com/u/152672?v=4")
+                itemOne.avatarUrl,
+                `is`("https://avatars.githubusercontent.com/u/152672?v=4")
         )
         Assert.assertThat(itemOne.login, `is`("doan"))
 
@@ -45,8 +45,8 @@ class AppEntityJsonMapperTest {
         val resultModel = UserMapper.toDomain(userEntity)
         Assert.assertThat(resultModel.nodeId, `is`("MDQ6VXNlcjIyNzYyMA=="))
         Assert.assertThat(
-            resultModel.avatarUrl,
-            `is`("https://avatars.githubusercontent.com/u/227620?v=4")
+                resultModel.avatarUrl,
+                `is`("https://avatars.githubusercontent.com/u/227620?v=4")
         )
         Assert.assertThat(resultModel.url, `is`("https://api.github.com/users/doanac"))
         Assert.assertThat(resultModel.htmlUrl, `is`("https://github.com/doanac"))

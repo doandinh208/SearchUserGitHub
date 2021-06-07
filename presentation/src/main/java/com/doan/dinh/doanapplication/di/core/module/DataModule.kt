@@ -17,7 +17,7 @@ class DataModule {
     @Provides
     @Singleton
     fun provideUserRepository(
-        userRemote: UserDataSource
+            userRemote: UserDataSource
     ): UserRepository {
         return UserRepositoryImpl(userRemote)
     }

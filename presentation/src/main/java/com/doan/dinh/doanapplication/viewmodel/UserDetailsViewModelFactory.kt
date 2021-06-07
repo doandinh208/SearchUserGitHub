@@ -8,8 +8,8 @@ import com.doan.dinh.domain.usecase.GetDetailUseCase
 
 class UserDetailsViewModelFactory(
 
-    private val detailUseCase: GetDetailUseCase,
-    private val dispatchers: DispatchersProvider
+        private val detailUseCase: GetDetailUseCase,
+        private val dispatchers: DispatchersProvider
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

@@ -7,8 +7,8 @@ import com.doan.dinh.domain.usecase.GetSearchUseCase
 
 
 class SearchViewModelFactory(
-    private val searchUseCase: GetSearchUseCase,
-    private val dispatchers: DispatchersProvider
+        private val searchUseCase: GetSearchUseCase,
+        private val dispatchers: DispatchersProvider
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

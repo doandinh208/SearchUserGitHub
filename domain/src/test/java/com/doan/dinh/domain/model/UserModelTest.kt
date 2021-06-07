@@ -12,16 +12,16 @@ class UserModelTest {
     @Before
     fun setUp() {
         userModel = UserModel(
-            "testUrl",
-            "nodeId",
-            "url",
-            "htmlUrl",
-            true,
-            "testName",
-            "company",
-            "blog",
-            "location",
-            "testEmail"
+                "testUrl",
+                "nodeId",
+                "url",
+                "htmlUrl",
+                true,
+                "testName",
+                "company",
+                "blog",
+                "location",
+                "testEmail"
         )
     }
 

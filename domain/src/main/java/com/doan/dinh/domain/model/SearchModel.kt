@@ -1,12 +1,12 @@
 package com.doan.dinh.domain.model
 
 data class SearchModel(
-    var totalCount: Long,
-    var isIncompleteResults: Boolean,
-    var items: List<ItemModel>
+        var totalCount: Long,
+        var isIncompleteResults: Boolean,
+        var items: List<ItemModel>
 ) {
     data class ItemModel(
-        var avatarUrl: String?,
-        var login: String
+            var avatarUrl: String?,
+            var login: String
     )
 }

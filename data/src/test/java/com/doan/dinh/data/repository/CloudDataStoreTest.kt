@@ -34,7 +34,7 @@ class CloudDataStoreTest {
         given(mockRestApi.searchUserAsync("test")).willReturn(fakeObservable)
         runBlockingTest {
             cloudDataStore.searchUser("test")
-            verify<GithubService>(mockRestApi).searchUserAsync("test")
+            verify(mockRestApi).searchUserAsync("test")
         }
 
     }
@@ -46,7 +46,7 @@ class CloudDataStoreTest {
         given(mockRestApi.getUserAsync("test")).willReturn(fakeObservable)
         runBlockingTest {
             cloudDataStore.getUser("test")
-            verify<GithubService>(mockRestApi).getUserAsync("test")
+            verify(mockRestApi).getUserAsync("test")
         }
     }
 

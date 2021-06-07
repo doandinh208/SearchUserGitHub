@@ -7,16 +7,16 @@ object UserMapper {
 
     fun toDomain(dataRemote: UserEntity): UserModel {
         return UserModel(
-            avatarUrl = dataRemote.avatarUrl,
-            nodeId = dataRemote.nodeId,
-            url = dataRemote.url,
-            htmlUrl = dataRemote.htmlUrl,
-            isSiteAdmin = dataRemote.isSiteAdmin,
-            name = dataRemote.name,
-            company = dataRemote.company,
-            blog = dataRemote.blog,
-            location = dataRemote.location,
-            email = dataRemote.email
+                avatarUrl = dataRemote.avatarUrl,
+                nodeId = dataRemote.nodeId,
+                url = dataRemote.url,
+                htmlUrl = dataRemote.htmlUrl,
+                isSiteAdmin = dataRemote.isSiteAdmin,
+                name = dataRemote.name,
+                company = dataRemote.company,
+                blog = dataRemote.blog,
+                location = dataRemote.location,
+                email = dataRemote.email
         )
     }
 

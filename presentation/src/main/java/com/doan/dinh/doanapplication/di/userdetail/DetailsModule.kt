@@ -11,8 +11,8 @@ class DetailsModule {
 
     @Provides
     fun provideUserDetailsViewModelFactory(
-        useCase: GetDetailUseCase,
-        dispatchersProvider: DispatchersProvider
+            useCase: GetDetailUseCase,
+            dispatchersProvider: DispatchersProvider
     ): UserDetailsViewModelFactory {
         return UserDetailsViewModelFactory(useCase, dispatchersProvider)
     }

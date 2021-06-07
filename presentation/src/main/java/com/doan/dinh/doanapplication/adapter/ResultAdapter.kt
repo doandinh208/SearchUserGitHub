@@ -7,19 +7,19 @@ import com.bumptech.glide.Glide
 import com.doan.dinh.doanapplication.databinding.ItemResultLayoutBinding
 import com.doan.dinh.domain.model.SearchModel
 
-class ResultAdapter() : RecyclerView.Adapter<ResultAdapter.ViewHolder>() {
+class ResultAdapter : RecyclerView.Adapter<ResultAdapter.ViewHolder>() {
 
     var data: List<SearchModel.ItemModel> = arrayListOf()
     private var listener: ((SearchModel.ItemModel) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding =
-            ItemResultLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                ItemResultLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(data[position])
+            holder.bind(data[position])
 
     override fun getItemCount() = data.size
 
@@ -28,7 +28,7 @@ class ResultAdapter() : RecyclerView.Adapter<ResultAdapter.ViewHolder>() {
     }
 
     inner class ViewHolder(private val binding: ItemResultLayoutBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+            RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: SearchModel.ItemModel) {
             itemView.apply {

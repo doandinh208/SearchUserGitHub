@@ -32,7 +32,7 @@ class GetSearchUseCaseTest {
     @Before
     fun setUp() {
         getSearchUseCase = GetSearchUseCase(
-            userRepository
+                userRepository
         )
     }
 
