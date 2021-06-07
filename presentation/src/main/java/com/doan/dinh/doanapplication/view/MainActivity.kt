@@ -49,6 +49,7 @@ class MainActivity : BaseActivity<SearchViewModel>() {
             if(binding.progressBar.visibility == View.GONE) {
                 val key = binding.edtSearch.text.toString()
                 if(key.isNotEmpty()) {
+                    binding.tvNoresult.visibility = View.GONE
                     viewModel.doSearch(key)
                 }
             }
@@ -72,6 +73,11 @@ class MainActivity : BaseActivity<SearchViewModel>() {
         viewModel.onSearch().observe { data ->
             searchAdapter.setItems(data.items)
             binding.progressBar.visibility = View.GONE
+            if(data.items.isEmpty()) {
+                binding.tvNoresult.visibility = View.VISIBLE
+            }else{
+                binding.tvNoresult.visibility = View.GONE
+            }
         }
 
         viewModel.getNavigateToDetails().observe { item ->

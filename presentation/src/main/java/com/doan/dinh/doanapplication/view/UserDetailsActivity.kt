@@ -47,9 +47,41 @@ class UserDetailsActivity : BaseActivity<UserDetailsViewModel>() {
         if (username == null) {
             finish()
         }
-        binding.test.text = username
 
 
+        username?.apply {
+            viewModel.getDetail(this)
+            observeViewModel()
+        }
+
+
+    }
+
+    private fun observeViewModel() {
+        viewModel.onGetDetail().observe { user ->
+            if(!user.avatarUrl.isNullOrEmpty()) {
+                Glide.with(applicationContext).load(user.avatarUrl).into(binding.ivAvatarDetail)
+            }
+
+            binding.tvName.text = user.name
+            binding.tvEmail.text = user.email
+            binding.tvCompany.text = user.company
+            binding.tvLocation.text = user.location
+            binding.tvBlog.text = user.blog
+        }
+
+        viewModel.getHideLoadingLiveData().observe {
+            binding.progressBar.visibility = View.GONE
+        }
+
+        viewModel.getShowLoadingLiveData().observe {
+            binding.progressBar.visibility = View.VISIBLE
+        }
+
+
+        viewModel.getShowErrorLiveData().observe { error ->
+            Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+        }
     }
 
 }

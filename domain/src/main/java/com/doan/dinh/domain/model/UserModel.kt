@@ -9,7 +9,6 @@ data class UserModel (
 
     var url: String?,
     var htmlUrl: String?,
-    var reposUrl: String?,
     var isSiteAdmin: Boolean?,
     var name: String?,
     var company: String?,

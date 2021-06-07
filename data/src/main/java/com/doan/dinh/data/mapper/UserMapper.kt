@@ -11,7 +11,6 @@ object UserMapper {
         nodeId= dataRemote.nodeId,
         url= dataRemote.url,
         htmlUrl= dataRemote.htmlUrl,
-        reposUrl= dataRemote.reposUrl,
         isSiteAdmin= dataRemote.isSiteAdmin,
         name= dataRemote.name,
         company= dataRemote.company,
