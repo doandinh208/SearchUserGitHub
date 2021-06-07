@@ -5,5 +5,5 @@ import dagger.Subcomponent
 
 @Subcomponent(modules = [DetailsModule::class])
 interface DetailsSubComponent {
-    fun inject(movieDetailsActivity: UserDetailsActivity)
+    fun inject(userDetailsActivity: UserDetailsActivity)
 }
